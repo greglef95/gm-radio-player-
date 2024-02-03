@@ -1,0 +1,78 @@
+#volumeValue {
+  display: none;
+  position: fixed;
+  margin-top: 17px;
+  margin-left: 65px;
+  font-family: Audiowide, sans-serif;
+  font-size: 12px;
+  color: #fff;
+  background-color: #000;
+  -webkit-transition: opacity 1.5s 0s ease;
+  -moz-transition: opacity 1.5s 0s ease;
+  -o-transition: opacity 1.5s 0s ease;
+  transition: opacity 1.5s 0s ease;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100px;
+  height: 3px;
+  margin: 8px;
+  background: linear-gradient(90deg, rgba(101, 101, 101, 1) 60%, rgba(191, 0, 24, 1) 100%);
+  outline: 0;
+  position: fixed;
+  margin-top: 23px;
+  margin-left: 120px;
+  opacity: 0.7;
+}
+.slider:hover {
+  opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  border-radius: 50%;
+  height: 20px;
+  background: url(https://deseoradio.com/wp-content/uploads/2023/01/holder.png);
+  cursor: pointer;
+}
+.slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  border-radius: 50%;
+  height: 20px;
+  background: url(https://deseoradio.com/wp-content/uploads/2023/01/holder.png);
+  cursor: pointer;
+}
+#playPause {
+  background-image: url(https://deseoradio.com/wp-content/uploads/2023/01/play.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+}
+#playPause.paused {
+  background-image: url(https://deseoradio.com/wp-content/uploads/2023/01/pause.png);
+}
+.deseonewppbtn {
+  border: none;
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  border-radius: 100%;
+  -webkit-transition: 0.7s;
+}
+.deseonewppbtn:hover {
+  position: relative;
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  z-index: 999;
+}
+.statusDeseo {
+  position: fixed;
+  width: 50px;
+  margin-left: 10px;
+  margin-top: 15px;
+}
