@@ -17,13 +17,18 @@
   <meta name="theme-color" content="#000000">
 </head>
 
-<body oncontextmenu="return false;">
 <button type="button" class="deseonewppbtn" id="playPause"></button>
 <input class="slider" type="range" min="0" max="100" value="75" id="volumeSlider" /> <span id="volumeValue">75%</span>
 <img class="statusDeseo" id="onAir" src="https://deseoradio.com/wp-content/uploads/2023/01/onair-player-dg.png" />
-
-  <script src="js/app.js"></script>
-
+<script src="js/app.js"></script>
+<!--GIP SAFETY+ JS-->
+<script>
+  function CustomAlert(){let e=this;this.alert=function(t,i){document.body.innerHTML=document.body.innerHTML+'<div id="dialogoverlay"></div><div id="dialogbox" class="slit-in-vertical"><div><div id="dialogboxhead"></div><div id="dialogboxbody"></div><div id="dialogboxfoot"></div></div></div>';let o=document.getElementById("dialogoverlay"),l=document.getElementById("dialogbox"),n=window.innerHeight,d=window.pageYOffset||document.documentElement.scrollTop;o.style.height=n+"px",l.style.top=d+.3*n+"px",o.style.display="block",l.style.display="block",document.getElementById("dialogboxhead").style.display="block",void 0===i?document.getElementById("dialogboxhead").style.display="none":document.getElementById("dialogboxhead").innerHTML='<i class="fa fa-exclamation-circle" aria-hidden="true"></i> '+i,document.getElementById("dialogboxbody").innerHTML=t,document.getElementById("dialogboxfoot").innerHTML='<button class="pure-material-button-contained active" onclick="customAlert.ok()">Close & Continue!</button>',document.addEventListener("keydown",e.preventDefaultAction),document.addEventListener("click",e.preventDefaultAction)},this.ok=function(){document.getElementById("dialogbox").style.display="none",document.getElementById("dialogoverlay").style.display="none",document.removeEventListener("keydown",e.preventDefaultAction),document.removeEventListener("click",e.preventDefaultAction)},this.preventDefaultAction=function(t){t.preventDefault(),e.alert(document.getElementById("dialogboxbody").innerHTML)}}let customAlert=new CustomAlert;
+</script>
+<script>
+  document.addEventListener("keydown",function(e){(e.ctrlKey&&"u"===e.key||e.ctrlKey&&"c"===e.key||e.ctrlKey&&"C"===e.key||e.ctrlKey&&"x"===e.key||e.ctrlKey&&"X"===e.key||e.ctrlKey&&"U"===e.key||e.ctrlKey&&"Θ"===e.key||e.ctrlKey&&"θ"===e.key||e.ctrlKey&&"χ"===e.key||e.ctrlKey&&"Χ"===e.key||e.ctrlKey&&"ψ"===e.key||e.ctrlKey&&"Ψ"===e.key||"F12"===e.key||e.ctrlKey&&e.shiftKey&&"ι"===e.key||e.ctrlKey&&e.shiftKey&&"Ι"===e.key||e.ctrlKey&&e.shiftKey&&"I"===e.key||e.ctrlKey&&e.shiftKey&&"i"===e.key)&&(e.preventDefault(),customAlert.alert('<p class="gipcode">Contact Us at GIPCODE.gr</p><br>\xa9 2024 | GIPCODE.gr | All Legal Rights Reserved',"Remember! Copying code is illegal!"))}),document.addEventListener("contextmenu",function(e){e.preventDefault(),customAlert.alert('<p class="gipcode">Contact Us at GIPCODE.gr</p><br>\xa9 2024 | GIPCODE.gr | All Legal Rights Reserved',"Remember! Copying code is illegal!")});
+</script>
+<!--END OF GIP SAFETY+ JS-->
 </body>
 
 </html>
