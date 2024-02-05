@@ -1,3 +1,7 @@
+html {
+  background-color: black;
+}
+
 #volumeValue {
   display: none;
   position: fixed;
@@ -56,7 +60,7 @@
   background-image: url(https://deseoradio.com/wp-content/uploads/2023/01/pause.png);
 }
 .deseonewppbtn {
-  border: none;
+  border: none; z-index: 9999;
   width: 50px;
   height: 50px;
   background-color: #000;

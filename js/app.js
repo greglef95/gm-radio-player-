@@ -1,6 +1,11 @@
 document.addEventListener("keydown", function (event) {
   if (event.key === "p" || event.key === "P") {
     togglePlayback();
+  } else if (e.key == " " ||
+    e.code == "Space" ||
+    e.keyCode == 32
+  ) {
+    togglePlayback();
   } else if (event.key === "-") {
     adjustVolume(-0.1);
   } else if (event.key === "=") {
@@ -26,8 +31,10 @@ player.volume = 0.8;
 player.autoplay = true;
 updateMediaSessionMetadata();
 var isPlaying = !(player.preload = "none");
-document.getElementById("playPause").addEventListener("click", function () {
-  togglePlayback();
+document.addEventListener("keydown", function (event) {
+  if (event.key === " ") {
+    togglePlayback();
+  }
 });
 function togglePlayback() {
   isPlaying = !isPlaying;
