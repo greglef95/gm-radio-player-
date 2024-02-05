@@ -1,23 +1,15 @@
 document.addEventListener("keydown", function (event) {
   if (event.key === "p" || event.key === "P") {
     togglePlayback();
-  } else if (e.key == " " ||
-    e.code == "Space" ||
-    e.keyCode == 32
-  ) {
-    togglePlayback();
   } else if (event.key === "-") {
     adjustVolume(-0.1);
   } else if (event.key === "=") {
     adjustVolume(0.1);
   }
 });
-document.addEventListener("keydown", function (event) {
-  if ((event.ctrlKey && event.key === "u") || (event.ctrlKey && event.key === "θ") || event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I") || (event.ctrlKey && event.shiftKey && event.key === "Ι")) {
-    event.preventDefault();
-    alert("\u00A9 2023 GIPCODE.gr | All Rights Received");
-  }
-});
+function getCurrentSongTitle() {
+  return "Deseo is loading title...";
+}
 document.addEventListener("contextmenu", function (event) {
   event.preventDefault();
 });
@@ -38,20 +30,26 @@ document.addEventListener("keydown", function (event) {
 });
 function togglePlayback() {
   isPlaying = !isPlaying;
+
   if (isPlaying) {
     player.src = currentSrc;
-    player.play();
-    document.getElementById("playPause").classList.add("paused");
-    document.getElementById("onAir").src = "https://deseoradio.com/wp-content/uploads/2023/01/onair-player-wh.png";
-    updateMediaSessionMetadata();
-    const songTitle = document.querySelector("title");
-    songTitle.innerHTML = getCurrentSongTitle();
+
+    // Use canplay event to ensure the source is ready before playing
+    player.addEventListener('canplay', function onCanPlay() {
+      player.removeEventListener('canplay', onCanPlay); // Remove the event listener
+      player.play();
+      document.getElementById("playPause").classList.add("paused");
+      document.getElementById("onAir").src = "https://deseoradio.com/wp-content/uploads/2023/01/onair-player-wh.png";
+      updateMediaSessionMetadata();
+      const songTitle = document.querySelector("title");
+      songTitle.innerHTML = getCurrentSongTitle();
+    });
   } else {
     player.pause();
     document.getElementById("playPause").classList.remove("paused");
     document.getElementById("onAir").src = "https://deseoradio.com/wp-content/uploads/2023/01/onair-player-dg.png";
     navigator.mediaSession.metadata = null;
-    const originalTitle = "DESEO #NowPlaying";
+    const originalTitle = "Press Play to show the #NowPlaying Title";
     document.title = originalTitle;
   }
 }
