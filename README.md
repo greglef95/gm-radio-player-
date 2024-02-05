@@ -10,6 +10,8 @@ This project is a JS based radio player developed by GIPCODE Digital Agency for 
 - Keyboard shortcuts for developer tools prevention.
 - Customized appearance with on-air indicator and volume slider.
 - Automatic updates of media session metadata based on the radio station's API.
+- Real-Time iOS Metadata Update (iPhone, Apple Watch etc.).
+- "Space" Key to start playback.
 
 ## Getting Started
 
